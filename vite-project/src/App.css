@@ -1,0 +1,103 @@
+body {
+  background: #fff;
+  font-family: 'Delius', cursive;
+}
+
+#app {
+  padding: 35px;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.playground {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  user-select: none;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.6s;
+}
+
+.card div {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: 0.6s;
+  background: #f4f5f7;
+}
+
+.card .front {
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, #FFFFFF, #ECE9E6);
+}
+
+.card .back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .back img {
+  width: 70%;
+  height: auto;
+}
+
+.card.opened {
+  transform: rotateY(180deg);
+}
+
+.card.matched .back {
+  opacity: 0.3;
+  animation: selected 0.8s ease forwards;
+}
+
+.card.empty {
+  visibility: hidden;
+  pointer-events: none;
+}
+.restart-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-family: 'Delius', cursive;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-button:hover {
+  background-color: #45a049;
+}
+
+@keyframes selected {
+  0% { opacity: .2; }
+  30% { opacity: .5; }
+  50% { opacity: .9; }
+  70% { opacity: .2; }
+  100% { opacity: .3; }
+}
