@@ -18,7 +18,7 @@ Bu proje, popüler JavaScript framework ve kütüphanelerini kullanarak hazırla
 Projeyi klonladıktan sonra aşağıdaki adımlarla çalıştırabilirsin:
 
 ```bash
-git clone https://github.com/fatihcetin98/CardGame.git
+git clone https://github.com/fatihcetin98/React-CardGame.git
 cd vite-project
 npm install
 npm start
